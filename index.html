@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elodie's First Birthday</title>
+    <link rel="icon" type="image/png" href="cake.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth scroll */
+        :root {
+        scroll-behavior: smooth;
+        }
+        /* Scrollbar width */
+        ::-webkit-scrollbar {
+        width: 8px;
+        }
+
+        /* Track (background) */
+        ::-webkit-scrollbar-track {
+        background: none;
+        }
+
+        /* Thumb (the draggable part) */
+        ::-webkit-scrollbar-thumb {
+        background: var(--boho-gold);
+        border-radius: 5px;
+        }
+
+        /* Thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: var(--boho-pink);
+        }
+
+        @media (max-width: 576px) {
+        :root {
+        scroll-behavior: smooth;
+        }
+        /* Scrollbar width */
+        ::-webkit-scrollbar {
+        width: 5px;
+        }
+
+        /* Track (background) */
+        ::-webkit-scrollbar-track {
+        background: none;
+        }
+
+        /* Thumb (the draggable part) */
+        ::-webkit-scrollbar-thumb {
+        background: var(--boho-gold);
+        border-radius: 5px;
+        }
+
+        /* Thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: var(--boho-pink);
+        }
+        }
+
+        /* For a TTF (TrueType Font) */
+        @font-face {
+            font-family: 'Ballmain';
+            src: url('Ballmain.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* For an OTF (OpenType Font) */
+        @font-face {
+            font-family: 'RusticRoadway'; 
+            src: url('RusticRoadway.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'WhisperingSignature'; 
+            src: url('WhisperingSignature.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --boho-pink: #f4dada;
+            --boho-gold: #d4a373;
+            --boho-cream: #fefae0;
+            --text-dark: #604d4d;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--boho-cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--boho-gold);
+            letter-spacing: 1px;
+        }
+
+
+        .caption p{
+            font-family: 'Quicksand', sans-serif;
+            color: var(--boho-gold);
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        #rsvp p {
+            font-family: 'Ballmain', serif;
+            font-weight: 100;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        #rsvp span {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .container .lead {
+            font-family: 'Ballmain', serif;
+            font-weight: lighter;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            margin-top: 15px;
+            color: var(--text-dark);
+        }
+
+        .container p {
+            font-family: 'Ballmain', serif;
+            font-weight: lighter;
+            font-size: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .container h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: lighter;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: lighter;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .envelope-wrapper p {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+            url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 2px solid var(--boho-pink);
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .btn-rsvp {
+            background-color: var(--boho-gold);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-rsvp:hover {
+            background-color: var(--boho-pink);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        .floral-divider {
+            max-width: 200px;
+            margin: 20px auto;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: var(--boho-gold);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 40px 0;
+            background-color: var(--boho-pink);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: lighter;
+            font-size: 0.8rem;
+            letter-spacing: 0.7px;
+            margin: 0;
+        }
+
+        /* Music Control Styling */
+   .stack-container {
+        position: relative;
+        max-width: 380px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .polaroid-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 15px 45px 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid #eee;
+        opacity: 0;
+        transform: scale(0.9) rotate(-5deg);
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth elegant movement */
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .polaroid-slide img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+    }
+
+    /* The "Active" photo - perfectly centered and visible */
+    .polaroid-slide.active {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        z-index: 2;
+        pointer-events: auto;
+    }
+
+    /* The "Exiting" photo - drifts up and fades away */
+    .polaroid-slide.exit {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.05) rotate(5deg);
+        z-index: 1;
+    }
+
+    .polaroid-slide .caption {
+        margin-top: 15px;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Container to keep everything centered and responsive */
+.invitation-bg {
+    overflow: hidden; /* Prevents the card from causing scrollbars when it slides up */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+    margin-top: -120px;
+}
+
+.pola img{
+    z-index: 1;
+}
+
+.container{
+    max-height: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.envelope-wrapper {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    z-index: 999;
+    margin-top: 80px;
+}
+
+.envelope {
+    position: relative;
+    width: 660px;
+    height: 400px;
+    background: #F8F8F8;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.card-inner img{
+    height: 60px;
+    width: 60px;
+}
+
+/* 1. Make the flap longer so it covers the white peek-a-boo gap */
+.flap {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 330px solid transparent;
+    border-right:330px solid transparent;
+    /* Increased from 100px to 120px to cover the card top */
+    border-top: 300px solid #faebeb; 
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 999; /* Highest layer when closed */
+    justify-self: center;
+}
+
+/* Update the Envelope Body (Front Pocket) */
+.envelope .body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+    z-index: 999;
+    /* Adjusted the 'V' so the sides are higher up */
+    clip-path: polygon(0 0%, 50% 49%, 100% 0%, 100% 100%, 0 100%);
+    background: #F8F8F8; 
+}
+
+/* Left fold */
+.envelope .body::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 387px;
+    height: 1px;
+    background: #fbf1f1;
+    transform-origin: left bottom;
+    transform: rotate(-31deg);
+    z-index: 1000;
+}
+
+/* Right fold */
+.envelope .body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 386px;
+    height: 1px;
+    background: #fbf1f1;
+    transform-origin: right bottom;
+    transform: rotate(31deg);
+    z-index: 1000;
+}
+
+/* 3. Push the card further down */
+.invitation-card {
+    position: absolute;
+    /* Push it down so the top isn't visible */
+    top: 45px; 
+    left: 10px;
+    width: 640px;
+    height: 300px;
+    background: white;
+    z-index: 998; /* Behind everything */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 5px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+    align-items: baseline;
+}
+
+.invitation-card h4{
+    font-family: 'Ballmain', serif;
+    font-weight: 100;
+    font-size: 2.7rem;
+    letter-spacing: 1px;
+    color: var(--boho-gold);
+}
+
+.invitation-card h5{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 100;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.invitation-card h6{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.invitation-card button{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0px;
+    color: white;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .envelope-wrapper {
+        transform: scale(0.8);
+        transform-origin: top center;
+        margin-bottom: -80px; /* Collapses the empty space left by scaling */
+    }
+}
+
+@media (max-width: 576px) {
+    .envelope-wrapper {
+        transform: scale(0.55); /* Properly scales a 660px envelope to ~363px */
+        transform-origin: top center;
+        margin-bottom: -180px; 
+    }
+    section {
+        margin: auto;
+        max-width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .envelope-wrapper {
+        transform: scale(0.45); /* Scales the envelope to ~297px for very small screens */
+        transform-origin: top center;
+        margin-bottom: -220px;
+    }
+}
+
+/* ANIMATION STATES */
+.envelope-wrapper.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1001;
+}
+
+.envelope-wrapper.open .invitation-card {
+    
+    /* Larger move since it's starting lower down */
+    transform: translateY(-180px) scale(1.05); 
+    z-index: 1002;
+}
+
+
+.card-inner img, h4{
+    margin-top: 10px;
+    margin-bottom: 10px;   
+}
+
+.card-inner a{
+    margin-top: 30px;
+}
+/* Floating Music Button */
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--boho-pink);
+    color: var(--text-dark);
+    border: 2px solid var(--boho-gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1050; /* Keeps it above everything else */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-btn:hover {
+    background-color: var(--boho-gold);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Make it slightly smaller on mobile */
+@media (max-width: 576px) {
+    .music-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+<section class="pola py-5 overflow-hidden" id="polaroid-trigger"  style="background-image: url(bg.png); cursor: pointer;">
+    <div class="container active text-center mb-5" data-aos="fade-up">
+        <h2 class="display-5">A Year of Firsts</h2>
+        <p class="lead">Sit back and watch Elodie's journey unfold...</p>
+    </div>
+
+    <div class="stack-container">
+        <div class="polaroid-slide active">
+            <img src="1st.jpg" alt="1 Month">
+            <div class="caption"><p>1st Month: Hello World!</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="2nd.jpg" alt="2 Months">
+            <div class="caption"><p>2nd Month: Twice the Fun</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="3rd.jpg" alt="3 Months">
+            <div class="caption"><p>3rd Month: Pumpkin Cheeks</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="4th.jpg" alt="4 Months">
+            <div class="caption"><p>4th Month: Baby in Red</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="5th.jpg" alt="5 Months">
+            <div class="caption"><p>5th Month: Kikay in Polka</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="6th.jpg" alt="6 Months">
+            <div class="caption"><p>6th Month: Halfway to One!</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="7th.jpg" alt="7 Months">
+            <div class="caption"><p>7th Month: Little Haponesa</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="8th.jpg" alt="8 Months">
+            <div class="caption"><p>8th Month: Little Bini</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="9th.jpg" alt="9 Months">
+            <div class="caption"><p>9th Month: Elodie FLORES De Mayo</p></div>
+        </div>
+        <div class="polaroid-slide">
+            <img src="10th.jpg" alt="10 Months">
+            <div class="caption"><p>10th Month: Ready for Recess!</p></div>
+        </div>
+    </div>
+
+
+    
+    <div class="container d-flex justify-content-center align-items-center">
+        
+        <div class="envelope-wrapper" onclick="openInvitation()">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="body"></div>
+                
+                <div class="invitation-card shadow" style="background-image: url(pink.jpg);">
+                    <div class="card-inner text-center p-3">
+
+                        <img src="decoration_8044689.png" width="40" class="mb-2">
+                        <h4 >You're Invited!</h4>
+                        <h5 class="small mb-1">To Elodie's First Birthday</h5>
+                        <h6 class="small fw-bold mb-0">August 8, 2026</h6>
+                        <hr class="my-2">
+                        <a href="#rsvp"><button class="btn btn-sm btn-rsvp">See details</button></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-center text-muted animate-pulse">Click the envelope to open 🌸</p>
+        </div>
+
+    </div>
+    
+</section>
+
+    <section id="rsvp" style="background-image: url(bg2.png);">
+        <div class="container text-center py-5">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="info-box">
+                        <i class="fa-solid fa-calendar-day" style="color:#d39595;"></i>
+                        <h3>When</h3>
+                        <p>August 8, 2026<br>Saturday, 9:00 am</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" >
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot" style="color: #d39595;"></i>
+                        <h3>Where</h3>
+                        <p>Jollibee BGC Triangle<br>39th Street Corner, Triangle Dr, Taguig</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400" >
+                    <div class="info-box">
+                        <i class="fa-solid fa-shirt" style="color: #d39595;"></i>
+                        <h3>Dress Code</h3>
+                        <p>Light / Pastel Colors / Floral <br> <span>Except Pink</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mb-0" style="background-image: url(bg.png);">
+        <div class="container"> 
+            <div class="row justify-content-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="glass-card shadow-lg p-5">
+                        <h2 class="text-center mb-4">Will You Join Us?</h2>
+                        <form id="rsvpsub">
+                            <div class="mb-3">
+                                <label class="form-label">Guest Name</label>
+                                <input type="text" class="form-control rounded-pill" name="guest_name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Will you be attending?</label>
+                                <select class="form-select rounded-pill" name="attending" required>
+                                    <option selected disabled value="">Choose an option</option>
+                                    <option value="yes">Yes, with pleasure!</option>
+                                    <option value="no">Sadly, I can't make it</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Total Guests (Adults + Kids)</label>
+                                <input type="number" class="form-control rounded-pill" name="total_guests" min="1" max="10" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">A little message for Elodie would mean so much to us.</label>
+                                <textarea class="form-control" rows="2" placeholder="Write your message here..." name="message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-rsvp w-100">Send RSVP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p>We can't wait to celebrate with you!</p>
+        <p class="mb-0">#ElodiesFirstBirthday</p>
+    </footer>
+
+    <audio id="bg-music" loop>
+    <source src="TheHappySong.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-control" class="music-btn shadow" onclick="toggleMusic()">
+        <i class="fa-solid fa-music"></i>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        AOS.init(); 
+
+        // 1. FIXED: Added the openInvitation function
+        // --- UPDATE YOUR EXISTING ENVELOPE FUNCTION ---
+        function openInvitation() {
+            const envelope = document.querySelector('.envelope-wrapper');
+            envelope.classList.toggle('open');
+            
+            // Start the music automatically when they open the envelope!
+            // We check if it's NOT playing so we don't accidentally pause it if they click the envelope again
+            if (!isMusicPlaying) {
+                toggleMusic();
+            }
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.polaroid-slide');
+        const totalSlides = slides.length;
+
+        // This function handles the actual transition
+        function nextSlide() {
+            if (totalSlides === 0) return;
+
+            // 1. Remove 'exit' from all to reset the state
+            slides.forEach(slide => slide.classList.remove('exit'));
+
+            // 2. The current slide becomes the 'exit' slide (drifts away)
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].classList.add('exit');
+
+            // 3. Increment the index
+            currentSlide = (currentSlide + 1) % totalSlides;
+
+            // 4. The new slide becomes 'active' (pops in)
+            slides[currentSlide].classList.add('active');
+        }
+
+        // AUTO-PLAY: Changes slide every 3.5 seconds
+        let slideTimer = setInterval(nextSlide, 3000);
+
+        // MANUAL CLICK: Reset timer when user clicks so it doesn't double-flip
+        document.getElementById('polaroid-trigger').addEventListener('click', function() {
+            clearInterval(slideTimer); // Stop the old timer
+            nextSlide();               // Change slide immediately
+            slideTimer = setInterval(nextSlide, 3500); // Start a fresh timer
+        });
+
+        // Add the library if you haven't already in your head/footer
+
+       document.getElementById('rsvpsub').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    const btn = this.querySelector('button');
+    const attendance = this.querySelector('select').value;
+    const formData = new FormData(this);
+
+    // Show a loading state on the button
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "Sending RSVP... 💌";
+    btn.disabled = true;
+
+    // REPLACE 'YOUR_FORM_ID' with the ID from Formspree or Getform
+    fetch('https://formspree.io/f/mpqegrow', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Logic for 'Yes' (Confetti)
+            if (attendance === 'yes') {
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#f4dada', '#d4a373', '#fefae0', '#f8bbd0']
+                });
+                btn.innerHTML = "Sent! See you there! 🌸";
+                btn.style.backgroundColor = "#95d5b2";
+            } 
+            // Logic for 'No' (Broken Hearts)
+            else {
+                const scalar = 4;
+                const brokenHeart = confetti.shapeFromText({ text: '💔', scalar });
+                confetti({
+                    shapes: [brokenHeart],
+                    particleCount: 50,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#d39595', '#f4dada'],
+                    ticks: 300
+                });
+                btn.innerHTML = "Sent! We'll miss you! 💔";
+                btn.style.backgroundColor = "#d39595";
+            }
+            this.reset();
+        } else {
+            btn.innerHTML = "Error! Try again.";
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        btn.innerHTML = "Connection Error.";
+        btn.disabled = false;
+    });
+
+    // Reset button after 5 seconds to allow another entry if needed
+    setTimeout(() => {
+        btn.innerHTML = "Send RSVP";
+        btn.disabled = false;
+        btn.style.backgroundColor = "";
+    }, 5000);
+});
+
+
+// --- MUSIC CONTROL LOGIC ---
+const bgMusic = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+let isMusicPlaying = false;
+
+function toggleMusic() {
+    if (isMusicPlaying) {
+        bgMusic.pause();
+        // Change icon back to music note
+        musicBtn.innerHTML = '<i class="fa-solid fa-music"></i>'; 
+    } else {
+        bgMusic.play();
+        // Change icon to a pause button
+        musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i>'; 
+    }
+    isMusicPlaying = !isMusicPlaying;
+}
+
+
+</script>
+
+
+</button>
+</body>
+</html>
