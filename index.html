@@ -81,15 +81,15 @@
 
         /* For an OTF (OpenType Font) */
         @font-face {
-            font-family: 'RusticRoadway'; 
-            src: url('RusticRoadway.otf') format('opentype');
+            font-family: 'GreatVibes-Regular'; 
+            src: url('GreatVibes-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
-            font-family: 'WhisperingSignature'; 
-            src: url('WhisperingSignature.ttf') format('truetype');
+            font-family: 'Satisfy'; 
+            src: url('Satisfy-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -122,16 +122,27 @@
             font-size: 1.3rem;
             letter-spacing: 1px;
         }
+        #rsvp .ul{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        #rsvp .nl {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-decoration: underline;
+        }
 
         #rsvp p {
-            font-family: 'Ballmain', serif;
-            font-weight: 200;
-            font-size: 1rem;
+            font-family: 'Satisfy', serif;
+            font-weight: 500;
+            font-size: 1.2rem;
             letter-spacing: 2px;
         }
 
         .container .lead {
-            font-family: 'Ballmain', serif;
+            font-family: 'Satisfy', serif;
             font-weight: lighter;
             font-size: 1.1rem;
             letter-spacing: 1.5px;
@@ -140,7 +151,7 @@
         }
 
         .container p {
-            font-family: 'Ballmain', serif;
+            font-family: 'Satisfy', serif;
             font-weight: lighter;
             font-size: 0.5rem;
             letter-spacing: 1px;
@@ -605,23 +616,23 @@
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="info-box">
-                        <i class="fa-solid fa-calendar-day" style="color:#d39595;"></i>
+                        <i class="fa-solid fa-calendar-day" style="color:white;"></i>
                         <h3>When</h3>
                         <p>August 8, 2026<br>Saturday, 9:00 am</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" >
                     <div class="info-box">
-                        <i class="fa-solid fa-location-dot" style="color: #d39595;"></i>
+                        <i class="fa-solid fa-location-dot" style="color: white;"></i>
                         <h3>Where</h3>
                         <p>Jollibee BGC Triangle<br>39th Street Corner, Triangle Dr, Taguig</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="400" >
                     <div class="info-box">
-                        <i class="fa-solid fa-shirt" style="color: #d39595;"></i>
+                        <i class="fa-solid fa-shirt" style="color: white;"></i>
                         <h3>Dress Code</h3>
-                        <p>Any light pastel color, except pink.</p>
+                        <p>any light pastel color, <span class="ul">except </span><span class="nl">PINK.</span> </p>
                     </div>
                 </div>
             </div>
@@ -821,8 +832,5 @@ window.addEventListener("beforeunload", function () {
 });
 
 </script>
-
-
-</button>
 </body>
 </html>
